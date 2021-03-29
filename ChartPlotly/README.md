@@ -3,13 +3,13 @@
 Currently the code support multiline charts
 
 ## Requirements
-1. [Chart::Plotly](https://metacpan.org/pod/Chart::Plotly)
+1. [Chart::Plotly](https://metacpan.org/pod/Chart::Plotly) - Based on javascript library [plotly.js](https://plotly.com/javascript/)
 
 ## Input data
-    in input/input_data.json
+    in `input/input_data.json`
 
 ## Output
-    will be generated in output/lineChart.png
+    will be generated in `output/lineChart.png`
 
 ## How to run
-    perl multi_line_chart.pl
+    `perl multi_line_chart.pl`
