@@ -1,0 +1,21 @@
+% layout 'default';
+% title 'Charts';
+
+% content_for 'head' => begin
+    <link rel="stylesheet" type="text/css" href="css/charts.css">
+% end
+
+<div id="chartdiv"></div>
+
+% content_for 'end' => begin
+    %= javascript "https://cdn.amcharts.com/lib/4/core.js"
+    %= javascript "https://cdn.amcharts.com/lib/4/charts.js"
+    %= javascript "https://cdn.amcharts.com/lib/4/themes/animated.js"
+
+    %= javascript "js/multi_line_chart.js"
+
+    %= javascript begin
+        var chartData = JSON.parse(JSON.stringify((<%== $chart_data %>)))
+        createMultiLineChart(chartData);
+    % end
+% end
