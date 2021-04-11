@@ -1,5 +1,6 @@
 package MojoApp;
 use Mojo::Base 'Mojolicious', -signatures;
+use MojoApp::Model::Data;
 
 # This method will run once at server start
 sub startup ($self) {
@@ -9,6 +10,14 @@ sub startup ($self) {
 
     # Configure the application
     $self->secrets($config->{secrets});
+
+    # Helper to lazy initialize and store our model object
+    $self->helper(
+        model => sub ($c) {
+            state $data = MojoApp::Model::Data->new();
+            return $data;
+        }
+    );
 
     # Router
     my $r = $self->routes;
