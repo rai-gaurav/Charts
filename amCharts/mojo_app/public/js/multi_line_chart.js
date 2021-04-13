@@ -30,7 +30,7 @@ function createMultiLineChart(chartData) {
 
     var chart = am4core.create("chartdiv", am4charts.XYChart);
 
-    // Increase contrast by taking evey second color
+    // Increase contrast by taking every second color
     chart.colors.step = 3;
     //chart.hiddenState.properties.opacity = 0; // this creates initial fade-in
 
